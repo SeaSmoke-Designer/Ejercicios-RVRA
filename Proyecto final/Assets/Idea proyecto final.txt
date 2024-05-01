@@ -1,0 +1,8 @@
+Idea del juego: 
+
+Empezar en super-market como tutorial. Eliminar todos los zombies que hay dentro y los que vengan de fuera (opcional poner un timer, si llega al tiempo estimado dejan de aparecer zombies y pasa de nivel).
+Ideas para este nivel: 
+
+	- Voz con IA que salga de un walkie-talkie dando indicaciones
+
+Cuando pasemos de nivel, haremos spawn en el puente, luego tendremos que llegar a otro super market para poder comunicarnos con una banda de alli asi nos ayudan a salir de ahi. Por lo tanto la idea aqui es la siguiente: aparecer, ir hasta el super-market interaccionar con el walkie-talkie y luego esperar un cierto tiempo hasta que aparezcan tus "amigos" asi superar este nivel. Habra zombies entre el camino del puente y el super. Luego despues de interaccionar con el walkie habra una bengala o algo que llame la atencion de los zombies y entonces apareceran mas zombies. 
