@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  bulletObj: {fileID: 8862415877405898019, guid: 0aceedb830f5a88479958152bebc26b2,
+  bulletObj: {fileID: 4321040845465135270, guid: 3956e636fa86665919762fd484d1c4b9,
     type: 3}
   frontOfGun: {fileID: 5066165122944770788}
 --- !u!82 &9195350975182391378
