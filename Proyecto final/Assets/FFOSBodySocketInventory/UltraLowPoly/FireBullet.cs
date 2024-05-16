@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 [RequireComponent(typeof(AudioSource))]
 public class FireBullet : MonoBehaviour
 {
-    [SerializeField] private float speed = 50f;
+    [SerializeField] private float speedBullet = 50f;
     [SerializeField] private GameObject bulletObj;
     [SerializeField] private Transform frontOfGun;
     [Range(1, 15)]
@@ -18,15 +19,17 @@ public class FireBullet : MonoBehaviour
     private AudioSource audioSource;
     private bool isReloadBullets;
 
-    [SerializeField] private AudioClip disparo;
-    [SerializeField] private AudioClip noAmmo;
+    [SerializeField] private AudioClip gunShot;
+    [SerializeField] private AudioClip emptyGunShot;
+    [SerializeField] private TextMeshProUGUI textBullets;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         currentBullets = bullets;
         isReloadBullets = false;
-        audioSource.clip = disparo;
+        audioSource.clip = gunShot;
+        textBullets.text = currentBullets.ToString();
     }
 
     public static event Action GunFired;
@@ -36,10 +39,11 @@ public class FireBullet : MonoBehaviour
         {
             audioSource.Play();
             GameObject spawnedBullet = Instantiate(bulletObj, frontOfGun.position, frontOfGun.rotation);
-            spawnedBullet.GetComponent<Rigidbody>().velocity = speed * frontOfGun.forward;
+            spawnedBullet.GetComponent<Rigidbody>().velocity = speedBullet * frontOfGun.forward;
             Destroy(spawnedBullet, 6f);
             GunFired?.Invoke();
             currentBullets--;
+            textBullets.text = currentBullets.ToString();
         }
         else
         {
@@ -54,11 +58,12 @@ public class FireBullet : MonoBehaviour
     IEnumerator CorReloadBullets()
     {
         isReloadBullets = true;
-        audioSource.clip = noAmmo;
+        audioSource.clip = emptyGunShot;
         yield return new WaitForSeconds(timeReloadBullets);
         currentBullets = bullets;
+        textBullets.text = currentBullets.ToString();
         isReloadBullets = false;
-        audioSource.clip = disparo;
+        audioSource.clip = gunShot;
     }
 
 

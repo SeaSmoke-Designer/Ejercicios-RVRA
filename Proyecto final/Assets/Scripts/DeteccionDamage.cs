@@ -8,18 +8,21 @@ public class DeteccionDamage : MonoBehaviour
     [SerializeField] private int vida = 50;
     [Range(0, 30)]
     [SerializeField] private int damage = 25;
-    // Start is called before the first frame update
+    private GameManager gm;
+    private void Awake()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void Start()
     {
-        //gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (vida <= 0)
         {
-            Destroy(gameObject);
+            DestroyObject();
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -32,21 +35,17 @@ public class DeteccionDamage : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Bullet"))
-        {
-            Debug.Log("Hi");
-            gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
-            TakeDamage();
-        }
-    }
-
     private void TakeDamage()
     {
         if (vida > 0)
         {
             vida -= damage;
         }
+    }
+
+    void DestroyObject()
+    {
+        gm.SumarPoints();
+        Destroy(gameObject);
     }
 }
