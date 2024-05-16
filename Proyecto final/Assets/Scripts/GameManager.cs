@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textPoints;
-    
+
     [SerializeField] private int maxPoints;
     private int currentPoints;
     private int sumPoints = 50; //puntos por cada enemigo que matas
@@ -14,17 +14,19 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentPoints = 0;
+        textPoints.text = "0";
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SumarPoints()
     {
-
+        currentPoints += sumPoints;
+        textPoints.text = currentPoints.ToString();
     }
 }
