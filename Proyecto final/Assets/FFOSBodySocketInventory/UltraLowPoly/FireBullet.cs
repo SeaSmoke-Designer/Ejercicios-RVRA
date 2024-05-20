@@ -21,15 +21,23 @@ public class FireBullet : MonoBehaviour
 
     [SerializeField] private AudioClip gunShot;
     [SerializeField] private AudioClip emptyGunShot;
-    [SerializeField] private TextMeshProUGUI textBullets;
+    [SerializeField] private TextMeshProUGUI textNumberBullets;
+
+    [SerializeField] private GameObject animationReload;
+    [SerializeField] private GameObject textBullets;
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        animationReload.SetActive(false);
+    }
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        
         currentBullets = bullets;
         isReloadBullets = false;
         audioSource.clip = gunShot;
-        textBullets.text = currentBullets.ToString();
+        textNumberBullets.text = currentBullets.ToString();
     }
 
     public static event Action GunFired;
@@ -43,7 +51,7 @@ public class FireBullet : MonoBehaviour
             Destroy(spawnedBullet, 6f);
             GunFired?.Invoke();
             currentBullets--;
-            textBullets.text = currentBullets.ToString();
+            textNumberBullets.text = currentBullets.ToString();
         }
         else
         {
@@ -59,11 +67,15 @@ public class FireBullet : MonoBehaviour
     {
         isReloadBullets = true;
         audioSource.clip = emptyGunShot;
+        animationReload.SetActive(true);
+        textBullets.SetActive(false);
         yield return new WaitForSeconds(timeReloadBullets);
         currentBullets = bullets;
-        textBullets.text = currentBullets.ToString();
+        textNumberBullets.text = currentBullets.ToString();
         isReloadBullets = false;
         audioSource.clip = gunShot;
+        animationReload.SetActive(false);
+        textBullets.SetActive(true);
     }
 
 
