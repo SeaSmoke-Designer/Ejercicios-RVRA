@@ -36,10 +36,15 @@ public class TaskPatrol : BehaviorTree.Node
     IEnumerator CorWaitEnemy()
     {
         isWaiting = true;
+        enemyBT.velocidad = 0;
+        agent.speed = 0;
+        enemyBT.ReloadAnimation();
         yield return new WaitForSeconds(enemyBT.timeToWait);
         cont++;
         if (cont == enemyBT.points.Count) cont = 0;
         isWaiting = false;
-
+        enemyBT.velocidad = 0.4f;
+        agent.speed = 4.5f;
+        enemyBT.ReloadAnimation();
     }
 }

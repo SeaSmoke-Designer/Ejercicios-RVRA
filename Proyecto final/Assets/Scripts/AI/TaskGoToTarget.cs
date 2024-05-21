@@ -18,8 +18,15 @@ public class TaskGoToTarget : Node
     {
         //Debug.Log(ghostBT.chompLayerMask);
         Transform target = (Transform)bTree.GetData("target");
-        if (target != null) agent.destination = target.position;
-
+        if (target != null)
+        {
+            agent.destination = target.position;
+            
+        }else
+        {
+            enemyBT.velocidad = 0.4f;
+            enemyBT.ReloadAnimation();
+        }
         state = NodeState.RUNNING;
         return state;
     }

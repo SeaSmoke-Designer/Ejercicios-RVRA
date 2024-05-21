@@ -22,9 +22,17 @@ public class TaskIsOnRange : Node
         {
             enemyBT.SetData("target", hitColliders[0].transform);
             state = NodeState.SUCCESS;
+            enemyBT.velocidad = 1f;
+            agent.speed = 10f;
+            
         }
-        else state = NodeState.FAILURE;
-
+        else
+        {
+            //enemyBT.velocidad = 0.4f;
+            agent.speed = 4.5f;
+            state = NodeState.FAILURE;
+        }
+        enemyBT.ReloadAnimation();
         return state;
     }
 
