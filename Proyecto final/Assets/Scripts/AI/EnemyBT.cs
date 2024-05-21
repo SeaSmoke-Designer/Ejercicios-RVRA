@@ -11,8 +11,8 @@ public class EnemyBT : BTree
     public float timeToWait = 2f;
     public Animator animator;
     public float velocidad = 0.0f;
-    public float aceleracion = 0.1f;
-    public float desaceleracion = 0.5f;
+    public float maxSpeedAgent;
+    public float minSpeedAgent;
 
 
     protected override Node SetupTree()

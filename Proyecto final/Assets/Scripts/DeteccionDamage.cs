@@ -30,7 +30,7 @@ public class DeteccionDamage : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             Debug.Log("Hi1");
-            gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+            //gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
             TakeDamage();
         }
     }

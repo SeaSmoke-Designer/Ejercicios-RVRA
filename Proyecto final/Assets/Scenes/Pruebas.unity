@@ -4904,6 +4904,7 @@ GameObject:
   - component: {fileID: 1518419077}
   - component: {fileID: 1518419079}
   - component: {fileID: 1518419080}
+  - component: {fileID: 1518419081}
   m_Layer: 0
   m_Name: Zombie-Male
   m_TagString: Untagged
@@ -6022,8 +6023,8 @@ MonoBehaviour:
   timeToWait: 3.5
   animator: {fileID: 1518419076}
   velocidad: 0
-  aceleracion: 0.1
-  desaceleracion: 0.5
+  maxSpeedAgent: 7.5
+  minSpeedAgent: 3
 --- !u!114 &1518419080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6038,6 +6039,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   damage: 25
+--- !u!136 &1518419081
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511119018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.32298803
+  m_Height: 1.6081969
+  m_Direction: 1
+  m_Center: {x: 0.0047888756, y: 0.7186577, z: 0}
 --- !u!137 &1522648524
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ public class TaskPatrol : BehaviorTree.Node
         if (cont == enemyBT.points.Count) cont = 0;
         isWaiting = false;
         enemyBT.velocidad = 0.4f;
-        agent.speed = 4.5f;
+        agent.speed = enemyBT.minSpeedAgent;
         enemyBT.ReloadAnimation();
     }
 }
