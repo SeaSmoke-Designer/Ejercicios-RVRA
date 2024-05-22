@@ -17,12 +17,14 @@ public class TaskPatrol : BehaviorTree.Node
     {
         enemyBT = bTree as EnemyBT;
         agent = enemyBT.transform.GetComponent<NavMeshAgent>();
-        cont = 0;
+        cont = Random.Range(0, enemyBT.points.Count);
         isWaiting = false;
     }
 
     public override NodeState Evaluate()
     {
+        //int c = Random.Range(0, enemyBT.points.Count);
+        //Debug.Log(c);
         target = enemyBT.points[cont];
         if (target != null) agent.destination = target.position;
 
@@ -40,8 +42,8 @@ public class TaskPatrol : BehaviorTree.Node
         agent.speed = 0;
         enemyBT.ReloadAnimation();
         yield return new WaitForSeconds(enemyBT.timeToWait);
-        cont++;
-        if (cont == enemyBT.points.Count) cont = 0;
+        cont = Random.Range(0, enemyBT.points.Count);
+        //if (cont == enemyBT.points.Count) cont = 0;
         isWaiting = false;
         enemyBT.velocidad = 0.4f;
         agent.speed = enemyBT.minSpeedAgent;

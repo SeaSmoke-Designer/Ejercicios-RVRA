@@ -33,7 +33,7 @@ public class FireBullet : MonoBehaviour
 
     private void Start()
     {
-        
+
         currentBullets = bullets;
         isReloadBullets = false;
         audioSource.clip = gunShot;
@@ -43,7 +43,7 @@ public class FireBullet : MonoBehaviour
     public static event Action GunFired;
     public void Fire()
     {
-        if (currentBullets > 0)
+        if (currentBullets > 1)
         {
             audioSource.Play();
             GameObject spawnedBullet = Instantiate(bulletObj, frontOfGun.position, frontOfGun.rotation);

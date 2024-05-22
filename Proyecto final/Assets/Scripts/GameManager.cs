@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textPoints;
     [SerializeField] private TextMeshProUGUI textEnemiesDead;
 
-    [SerializeField] private int maxPoints;
+    private int maxPoints; //maximo de puntos 10000
+    [SerializeField] private int maxEnemies;
     private int currentPoints;
     private int curretnEnemiesDead;
     private readonly int sumPoints = 50; //puntos por cada enemigo que matas
+    private bool win;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +32,23 @@ public class GameManager : MonoBehaviour
 
     public void SumarPoints()
     {
-        currentPoints += sumPoints;
-        curretnEnemiesDead++;
-        textEnemiesDead.text = curretnEnemiesDead.ToString();
-        textPoints.text = currentPoints.ToString();
+        if (!win)
+        {
+            currentPoints += sumPoints;
+            curretnEnemiesDead++;
+            textEnemiesDead.text = curretnEnemiesDead.ToString();
+            textPoints.text = currentPoints.ToString();
+        }
+
+        if (curretnEnemiesDead >= maxEnemies)
+            Win();
+
     }
 
+    private void Win()
+    {
+        win = true;
+    }
     public void ExitGame()
     {
 #if UNITY_EDITOR
@@ -48,4 +61,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public int GetMaxEnemies() => maxEnemies;
 }
