@@ -5,13 +5,16 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject prefabZombie;
-    private GameManager zombie;
+    private GameObject zombie;
     private List<GameObject> zombieList = new List<GameObject>();
+    [SerializeField] private List<Transform> pointsZombies;
     private GameManager gm;
 
     private void Awake()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        pointsZombies = new List<Transform>();
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,9 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < gm.GetMaxEnemies(); i++)
         {
-            Instantiate(prefabZombie);
+            zombie = Instantiate(prefabZombie);
+            zombie.GetComponent<EnemyBT>().points = pointsZombies;
+            zombieList.Add(zombie);
         }
     }
 }

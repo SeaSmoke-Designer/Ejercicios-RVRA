@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
         currentPoints = 0;
         textPoints.text = "0";
         textEnemiesDead.text = "0";
+        //EnemyBT enemyBT = new EnemyBT();
+        //enemyBT.points
     }
 
     // Update is called once per frame
