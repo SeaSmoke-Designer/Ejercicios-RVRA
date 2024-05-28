@@ -191,6 +191,77 @@ Transform:
   - {fileID: 781626223404338024}
   m_Father: {fileID: 7041322683658334453}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1021011221260235948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066631865264642417}
+  - component: {fileID: 8010711147189671941}
+  - component: {fileID: 7181145302305275151}
+  m_Layer: 8
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1066631865264642417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021011221260235948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3026349482798698631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8010711147189671941
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021011221260235948}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.35
+  m_Height: 2.6294768
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.045312285, z: 0}
+--- !u!114 &7181145302305275151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021011221260235948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940c74418b4cfad3a9f9dded4819acd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 100
+  "da\xF1o": 20
+  soundDamage: {fileID: 8300000, guid: 8a2ec8976a90e66b9918886cd1c1b1bf, type: 3}
 --- !u!1 &1214283457677001103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,6 +2771,7 @@ GameObject:
   - component: {fileID: 1391001955088126649}
   - component: {fileID: 1715166888528891501}
   - component: {fileID: 6688307488155162112}
+  - component: {fileID: 7815451930393210505}
   m_Layer: 8
   m_Name: XR Origin (XR Rig)
   m_TagString: XR-Origin
@@ -2721,6 +2793,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6258065273572647736}
+  - {fileID: 1066631865264642417}
   m_Father: {fileID: 7702000884743360581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2128239795927319194
@@ -2878,6 +2951,21 @@ MonoBehaviour:
   m_LocomotionProvider: {fileID: 3531956599583727288}
   m_MinHeight: 1
   m_MaxHeight: 2
+--- !u!114 &7815451930393210505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600268795374197609}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940c74418b4cfad3a9f9dded4819acd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 100
+  "da\xF1o": 20
+  soundDamage: {fileID: 8300000, guid: 8a2ec8976a90e66b9918886cd1c1b1bf, type: 3}
 --- !u!1 &6601537027536737708
 GameObject:
   m_ObjectHideFlags: 0

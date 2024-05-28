@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - XR-Origin
+  - Zombie
   layers:
   - Default
   - TransparentFX

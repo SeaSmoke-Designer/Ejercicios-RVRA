@@ -18,7 +18,7 @@ public class TaskPatrol : BehaviorTree.Node
         enemyBT = bTree as EnemyBT;
         agent = enemyBT.transform.GetComponent<NavMeshAgent>();
         cont = Random.Range(0, enemyBT.points.Count);
-        Debug.Log("Cont = " + cont);
+        //Debug.Log("Cont = " + cont);
         isWaiting = false;
     }
 
