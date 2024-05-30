@@ -13,24 +13,17 @@ public class DeteccionDamage : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-    void Start()
-    {
-        
-    }
-
+    void Start() { }
     void Update()
     {
         if (vida <= 0)
-        {
             DestroyObject();
-        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
             Debug.Log("Hi1");
-            //gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
             TakeDamage();
         }
     }
@@ -38,9 +31,7 @@ public class DeteccionDamage : MonoBehaviour
     private void TakeDamage()
     {
         if (vida > 0)
-        {
             vida -= damage;
-        }
     }
 
     void DestroyObject()

@@ -15,18 +15,12 @@ public class HealtManagment : MonoBehaviour
     {
         vidaActual = vidaMaxima;
     }
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (vidaActual <= 0)
             SceneManager.LoadScene(0);
     }
-
     void TakeDamage()
     {
         if (vidaActual > 0)
@@ -38,13 +32,11 @@ public class HealtManagment : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.CompareTag("Zombie"))
         {
             Debug.Log("Hi1");
             TakeDamage();
         }
-
     }
 
     private void OnCollisionEnter(Collision other)

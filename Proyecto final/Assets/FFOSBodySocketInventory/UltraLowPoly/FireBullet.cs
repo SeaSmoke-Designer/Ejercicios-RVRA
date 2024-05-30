@@ -33,7 +33,6 @@ public class FireBullet : MonoBehaviour
 
     private void Start()
     {
-
         currentBullets = bullets;
         isReloadBullets = false;
         audioSource.clip = gunShot;
@@ -60,9 +59,7 @@ public class FireBullet : MonoBehaviour
             else
                 audioSource.Play();
         }
-
     }
-
     IEnumerator CorReloadBullets()
     {
         isReloadBullets = true;
@@ -77,6 +74,4 @@ public class FireBullet : MonoBehaviour
         animationReload.SetActive(false);
         textBullets.SetActive(true);
     }
-
-
 }

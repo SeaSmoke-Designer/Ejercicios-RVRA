@@ -16,20 +16,15 @@ public class GameManager : MonoBehaviour
     private readonly int sumPoints = 50; //puntos por cada enemigo que matas
     private bool win;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentPoints = 0;
         textPoints.text = "0";
         textEnemiesDead.text = "0";
-        //EnemyBT enemyBT = new EnemyBT();
-        //enemyBT.points
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
 
     public void SumarPoints()
@@ -47,10 +42,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void Win()
-    {
-        win = true;
-    }
+    private void Win() => win = true;
     public void ExitGame()
     {
 #if UNITY_EDITOR
@@ -59,10 +51,6 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void ChangeScene()
-    {
-        SceneManager.LoadScene(1);
-    }
-
+    public void ChangeScene() => SceneManager.LoadScene(1);
     public int GetMaxEnemies() => maxEnemies;
 }

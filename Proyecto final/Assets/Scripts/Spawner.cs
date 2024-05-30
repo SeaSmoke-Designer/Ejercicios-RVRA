@@ -16,18 +16,11 @@ public class Spawner : MonoBehaviour
         pointsZombies = new List<Transform>();
         
     }
-    // Start is called before the first frame update
     void Start()
     {
         SpawnZombies();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    void Update() { }
     private void SpawnZombies()
     {
         for (int i = 0; i < gm.GetMaxEnemies(); i++)

@@ -26,13 +26,4 @@ public class Teleport : MonoBehaviour
         }
 
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("XR-Origin") && !teleported)
-        {
-            SceneManager.LoadScene(1);
-            teleported = true;
-        }
-    }*/
 }
